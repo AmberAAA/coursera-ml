@@ -21,8 +21,15 @@ grad = zeros(size(theta));
 %
 
 
+h = sigmoid(X * theta);
+
+J = (- y' * log(h) - (1 - y') * log(1 - h)) / m;
 
 
+temp = theta
+for i = 1 : length(theta)
+  grad(i) = (h - y)' * X(:, i) / m 
+endfor
 
 
 
